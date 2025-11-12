@@ -14,8 +14,11 @@ nmap -sVC --min-rate 1500 -p- -Pn 10.10.11.68
 ```
 echo "10.10.11.68 planning.htb" | sudo tee -a /etc/hosts
 ```
-
-
+# Recon 
+### Quét thư mục và các file có đuôi php, bak, zip
+```
+gobuster dir -u http://[TARGET_IP] -w /usr/share/wordlists/dirb/common.txt -x php,bak,zip,txt -t 50
+```
 # Tunnel
 
 ```
