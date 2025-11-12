@@ -19,6 +19,10 @@ echo "10.10.11.68 planning.htb" | sudo tee -a /etc/hosts
 ```
 gobuster dir -u http://[TARGET_IP] -w /usr/share/wordlists/dirb/common.txt -x php,bak,zip,txt -t 50
 ```
+### Scan subdomain
+```
+gobuster vhost -u http://soulmate.htb/ -w /usr/share/wordlists/seclists/Discovery/DNS/combined_subdomains.txt --append-domain -t 50
+```
 # Tunnel
 
 ```
