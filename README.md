@@ -7,6 +7,8 @@ y2BDp1p8
 
 ```
 nmap -sVC --min-rate 1500 -p- -Pn 10.10.11.68
+
+sudo nmap -sU --top-ports 100 -T4 -v <IP_Target>
 ```
 
 # Setup Host
