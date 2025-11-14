@@ -63,6 +63,20 @@ script -qc /bin/bash /dev/null
 python3 -c 'import pty,os; pty.spawn("/bin/bash")'
 export TERM=xterm export SHELL=bash export HISTFILE=/dev/null
 ```
+
+# RCE trick lỏd
+```
+/proc/self/cwd/package.json
+/proc/self/cmdline
+/proc/self/environ
+```
+
+### next .js old verison
+```
+/app/.env
+/app/.next/server/pages/api/auth/[...nextauth].js
+/app/.next/routes-manifest.json
+```
 # PE trick lỏd
 ```
 sudo -l
