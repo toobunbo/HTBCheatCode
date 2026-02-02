@@ -86,3 +86,9 @@ export TERM=xterm export SHELL=bash export HISTFILE=/dev/null
 sudo -l
 find / -perm -u=s -type f 2>/dev/null
 ```
+
+## Chết não
+- Chết não r thì nmap
+- Có key thì xem xem key đó là gì, đừng có ssh vô tội vạ
+- Framework framework framework 
+  
