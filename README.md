@@ -86,6 +86,10 @@ export TERM=xterm export SHELL=bash export HISTFILE=/dev/null
 sudo -l
 find / -perm -u=s -type f 2>/dev/null
 ```
+# Exploit Database
+## MariaDB
+SHOW DATABASES;
+USES {database};
 
 ## Chết não
 - Chết não r thì nmap
