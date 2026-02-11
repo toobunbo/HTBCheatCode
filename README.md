@@ -88,8 +88,10 @@ find / -perm -u=s -type f 2>/dev/null
 ```
 # Exploit Database
 ## MariaDB
+```
 SHOW DATABASES;
-USES {database};
+USE {database};
+```
 
 ## Chết não
 - Chết não r thì nmap
