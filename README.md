@@ -2,6 +2,7 @@
 ```
 nmap -sVC --min-rate 1500 -p- -Pn 10.10.11.68
 sudo nmap -sU --top-ports 100 -T4 -v <IP_Target>
+rustscan -a 10.129.111.122 --ulimit 5000 -- -A -sS -Pn -oN nmap_initial.txt
 ```
 
 # Setup Host
